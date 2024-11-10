@@ -1,0 +1,40 @@
+{
+  "name": "php-development-in-stackblitz",
+  "version": "0.1.0",
+  "description": "Example block scaffolded with Create Block tool.",
+  "author": "The WordPress Contributors",
+  "license": "GPL-2.0-or-later",
+  "main": "wp/server.js",
+  "type": "module",
+  "config": {
+    "test": "gziolo"
+  },
+  "scripts": {
+    "test": "echo asd $npm_package_config_test",
+    "dev": "node capture-url.js && run-p php-server start",
+    "php-server": "node wp/server.js",
+    "build": "cd todo-list && wp-scripts build",
+    "format": "cd todo-list && wp-scripts format",
+    "lint:css": "cd todo-list && wp-scripts lint-style",
+    "lint:js": "cd todo-list && wp-scripts lint-js",
+    "packages-update": "cd todo-list && wp-scripts packages-update",
+    "plugin-zip": "cd todo-list && wp-scripts plugin-zip",
+    "start": "cd todo-list && wp-scripts start"
+  },
+  "dependencies": {
+    "@php-wasm/node": "^0.0.3",
+    "@wordpress/scripts": "^26.0.0",
+    "body-parser": "^1.20.2",
+    "dummy-package-please-ignore": "^0.0.2",
+    "dummy-wpdata-please-ignore": "^0.0.4",
+    "esbuild": "^0.17.12",
+    "esbuild-sass-plugin": "^2.8.0",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.1",
+    "npm-run-all": "^4.1.5",
+    "raw-body": "^2.5.2"
+  },
+  "stackblitz": {
+    "startCommand": "cp .bashrc ~/.jshrc && sh ~/.jshrc && npm install && npm run dev"
+  }
+}
